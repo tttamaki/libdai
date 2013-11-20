@@ -209,6 +209,13 @@ std::ostream& operator << (std::ostream& os, const std::set<T> & x) {
     return os;
 }
 
+/// Writes a \c std::pair<> to a \c std::ostream
+template<class T1, class T2>
+std::ostream& operator << (std::ostream& os, const std::pair<T1,T2> & x) {
+    os << "(" << x.first << ", " << x.second << ")";
+    return os;
+}
+
 /// Writes a \c std::map<> to a \c std::ostream
 template<class T1, class T2>
 std::ostream& operator << (std::ostream& os, const std::map<T1,T2> & x) {
@@ -216,13 +223,6 @@ std::ostream& operator << (std::ostream& os, const std::map<T1,T2> & x) {
     for( typename std::map<T1,T2>::const_iterator it = x.begin(); it != x.end(); it++ )
         os << (it != x.begin() ? ", " : "") << it->first << "->" << it->second;
     os << "}";
-    return os;
-}
-
-/// Writes a \c std::pair<> to a \c std::ostream
-template<class T1, class T2>
-std::ostream& operator << (std::ostream& os, const std::pair<T1,T2> & x) {
-    os << "(" << x.first << ", " << x.second << ")";
     return os;
 }
 
