@@ -31,7 +31,7 @@ CC=g++
 # Output filename option of the compiler
 CCO=-o 
 # Flags for the C++ compiler
-CCFLAGS=-Wno-deprecated -Wall -W -Wextra -fPIC -DMACOSX -arch x86_64
+CCFLAGS=-Wno-deprecated -Wall -W -Wextra -fPIC -DMACOSX -arch x86_64 -std=c++11
 # Flags to add in debugging mode (if DEBUG=true)
 CCDEBUGFLAGS=-O3 -g -DDAI_DEBUG
 # Flags to add in non-debugging mode (if DEBUG=false)
